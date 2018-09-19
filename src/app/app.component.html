@@ -1,14 +1,23 @@
 <div>
   <nav class='navbar navbar-default'>
-    <div class='container-fluid'>
-      <a class ='navbar-brand'>{{pageTitle}}</a>
-      <ul class='nav navbar-nav'>
+    <div class='main'>
+      <div class='container-fluid'>
+        <a class='navbar-brand'>{{pageTitle}}</a>
+        <!-- <ul class='nav navbar-nav'>
         <li><a [routerLink]="['/welcome']"><button type="button" class="btn btn-primary">Home</button></a></li>
         <li><a [routerLink]="['/products']"><button type="button" class="btn btn-primary">Product List</button></a></li>
-      </ul>
+      </ul> -->
+      </div>
     </div>
   </nav>
-  <div class='container'>
-    <router-outlet></router-outlet>
+  <div class="sidebar">
+    <a [routerLink]="['/welcome']"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a [routerLink]="['/products']"><i class="fa fa-fw fa-wrench"></i>Product List</a>
+  </div>
+
+  <div class='main'>
+    <div class='container'>
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
