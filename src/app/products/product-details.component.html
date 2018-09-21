@@ -1,6 +1,45 @@
-<div class='panel panel-primary'>
+<div class='panel panel-primary' style="margin-left: 158px">
     <div class='panel panel-heading'>
         {{pageTitle}}
+    </div>
+    <div class='panel panel-body' *ngIf="product">
+        <div class="col-sm-6">
+            <div class='row'>
+                <div class='col-md-4'>Product Name:</div>
+                <div class='col-md-3'>
+                    {{ product.productName }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4'>Product Code:</div>
+                <div class='col-md-3'>
+                    {{ product.productCode }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4'>Product release:</div>
+                <div class='col-md-3'>
+                    {{ product.releaseDate }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4'>Price:</div>
+                <div class='col-md-3'>
+                    {{ product.price }}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-4'>Star Rating:</div>
+                <div class='col-md-3'>
+                    <ai-star [rating]='product.starRating'></ai-star>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class='row'>
+                <img [src]='product.imageUrl' class="float-right" style="width:100%;" />
+            </div>
+        </div>
     </div>
     <div class='panel-footer'>
         <a class='btn btn-default' (click)='onBack()' style='width:80px'>
