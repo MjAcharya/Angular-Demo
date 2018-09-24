@@ -2,13 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product"
 import { ProductService } from "./product.service";
 import { errorHandler } from "@angular/platform-browser/src/browser";
+import { TranslateService } from "@ngx-translate/core";
 @Component({
     templateUrl: 'product-list.component.html',
     styleUrls: ['product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
 
-    productTitle: string = "Product List!!";
+    productTitle: string;
     imageWidth: number = 120;
     imageMargin: number = 2;
     listFilter: string;
@@ -23,9 +24,14 @@ export class ProductListComponent implements OnInit {
                 console.log(err);
             },
         );
+
+        this.translate.get('productTitle').subscribe(res => {
+            this.productTitle = res;
+        })
     }
 
-    constructor(private _productService: ProductService) {
+    constructor(private _productService: ProductService, private translate: TranslateService) {
+        translate.setDefaultLang('en');
     }
 
     buttonToggle(): void {

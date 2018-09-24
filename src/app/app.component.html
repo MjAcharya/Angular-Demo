@@ -2,14 +2,14 @@
   <nav class='navbar navbar-default'>
     <div class='main'>
       <div class='container-fluid'>
-        <a class='navbar-brand'>{{pageTitle}}</a>
+        <a class='navbar-brand'>{{ 'Page' | translate }}</a>
       </div>
     </div>
   </nav>
   <div class='col-md-2'>
     <div class="sidebar">
-      <a [routerLink]="['/welcome']"><i class="fa fa-fw fa-home"></i>Home</a>
-      <a [routerLink]="['/products']"><i class="fa fa-fw fa-book"></i>Product List</a>
+      <a [routerLink]="['/welcome']"><i class="fa fa-fw fa-home"></i>{{ 'Home' | translate }}</a>
+      <a [routerLink]="['/products']"><i class="fa fa-fw fa-book"></i>{{ 'ProductList' | translate }}</a>
     </div>
   </div>
   <div>

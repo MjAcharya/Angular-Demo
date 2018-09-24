@@ -6,14 +6,14 @@
             </div>
             <div class='panel-body'>
                 <div>
-                    <div>Filter by</div>
+                    <div>{{ 'FilterBy' | translate}}</div>
                     <div>
                         <input type='text' [(ngModel)]='listFilter' />
                     </div>
                 </div>
                 <div class='row'>
                     <div>
-                        <h3 style="margin-left: 15px">Filtered by: {{ listFilter }}</h3>
+                        <h3 style="margin-left: 15px">{{ 'FilteredBy' | translate }}: {{ listFilter }}</h3>
                     </div>
                 </div>
                 <div class='table-responsive'>
@@ -22,14 +22,14 @@
                             <tr>
                                 <th>
                                     <button class='btn btn-primary' (click)='buttonToggle()'>
-                                        {{ setButton ? 'Hide image' : 'Show image' }}
+                                        {{ setButton ? 'HideImage' : 'ShowImage' | translate }}
                                     </button>
                                 </th>
-                                <th>Product</th>
-                                <th>Code</th>
-                                <th>Available</th>
-                                <th>Price</th>
-                                <th>5 Star Rating</th>
+                                <th>{{'Product'|translate}}</th>
+                                <th>{{'Code'|translate}}</th>
+                                <th>{{'Available'|translate}}</th>
+                                <th>{{'Price'|translate}}</th>
+                                <th>{{'5StarRating'|translate}}</th>
                             </tr>
                         </thead>
                         <tbody>

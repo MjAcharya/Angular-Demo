@@ -2,6 +2,7 @@ import { IProduct } from "./product";
 import { Component, OnInit, AfterContentInit } from "@angular/core";
 import { ActivatedRoute, Router } from "../../../node_modules/@angular/router";
 import { ProductService } from "./product.service";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
     templateUrl: 'product-details.component.html'
@@ -11,13 +12,16 @@ export class ProductDetailsComponent implements OnInit {
     products: IProduct[];
     product: IProduct;
     id: number;
-    pageTitle: string = 'Product Detail'
+    pageTitle: string;
 
     ngOnInit(): void {
 
         let othis = this;
         othis.id = +othis._route.snapshot.params['id'];
-        othis.pageTitle += ': ' + othis.id;
+        othis.translate.get('ProductTitleNo').subscribe(res => {
+            othis.pageTitle = res + ': ' + othis.id;
+        })
+
         othis.productList.getProduct().subscribe(res => {
             othis.products = res;
             for (let pro of othis.products) {
@@ -43,8 +47,8 @@ export class ProductDetailsComponent implements OnInit {
     }
 
     constructor(private _route: ActivatedRoute,
-        private _router: Router, private productList: ProductService) {
-
+        private _router: Router, private productList: ProductService, private translate: TranslateService) {
+        translate.setDefaultLang('en');
     }
 
     onBack(): void {

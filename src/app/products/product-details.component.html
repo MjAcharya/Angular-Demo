@@ -5,31 +5,31 @@
     <div class='panel panel-body' *ngIf="product">
         <div class="col-sm-6">
             <div class='row'>
-                <div class='col-md-4'>Product Name:</div>
+                <div class='col-md-4'>{{'Product'|translate}}:</div>
                 <div class='col-md-3'>
                     {{ product.productName }}
                 </div>
             </div>
             <div class='row'>
-                <div class='col-md-4'>Product Code:</div>
+                <div class='col-md-4'>{{'Code'|translate}}:</div>
                 <div class='col-md-3'>
                     {{ product.productCode }}
                 </div>
             </div>
             <div class='row'>
-                <div class='col-md-4'>Product release:</div>
+                <div class='col-md-4'>{{'Available'| translate}}:</div>
                 <div class='col-md-3'>
                     {{ product.releaseDate }}
                 </div>
             </div>
             <div class='row'>
-                <div class='col-md-4'>Price:</div>
+                <div class='col-md-4'>{{'Price'| translate}}:</div>
                 <div class='col-md-3'>
                     {{ product.price }}
                 </div>
             </div>
             <div class='row'>
-                <div class='col-md-4'>Star Rating:</div>
+                <div class='col-md-4'>{{'5StarRating'| translate}}:</div>
                 <div class='col-md-3'>
                     <ai-star [rating]='product.starRating'></ai-star>
                 </div>

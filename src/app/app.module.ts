@@ -5,12 +5,17 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ProductFilterPipes } from './products/product.filter.pipes';
 import { StarComponent } from './shared/star.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ProductDetailsComponent } from './products/product-details.component';
 import { RouterModule } from '@angular/router'
 import { WelcomeComponent } from './Home/welcome.component';
 import { ProductDetailGaurd } from './products/product-guard.service';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader( http ,'./assets/i18n/','.json')
+}
 @NgModule({
   declarations: [
     AppComponent, ProductListComponent, ProductFilterPipes, StarComponent, ProductDetailsComponent, WelcomeComponent
@@ -28,7 +33,14 @@ import { ProductDetailGaurd } from './products/product-guard.service';
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', component: WelcomeComponent }
-    ])
+    ]),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [ProductDetailGaurd],
   bootstrap: [AppComponent]
