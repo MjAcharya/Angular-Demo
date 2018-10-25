@@ -2,7 +2,7 @@ body {font-family: "Lato", sans-serif;}
 
 .sidebar {
   height: 100%;
-  width: 160px;
+  width: 168px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -22,8 +22,12 @@ body {font-family: "Lato", sans-serif;}
 
 .sidebar a:hover {
     background-color: #ddd;
-    border-radius: 12px;
+    border-radius: 16px;
     color: crimson;
+}
+
+.container .openbtn {
+  color: #ddd;
 }
 
 .main {

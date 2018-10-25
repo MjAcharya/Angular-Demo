@@ -8,8 +8,11 @@
   </nav>
   <div class='col-md-2'>
     <div class="sidebar">
-      <a [routerLink]="['/welcome']"><i class="fa fa-fw fa-home"></i>{{ 'Home' | translate }}</a>
-      <a [routerLink]="['/products']"><i class="fa fa-fw fa-book"></i>{{ 'ProductList' | translate }}</a>
+      <div class="container">
+          <a class="openbtn" onclick="openNav()"><i class="fa fa-fw fa-reorder"></i></a>
+          <a [routerLink]="['/welcome']"><i class="fa fa-fw fa-home"></i>{{ 'Home' | translate }}</a>
+          <a [routerLink]="['/products']"><i class="fa fa-fw fa-book"></i>{{ 'ProductList' | translate }}</a>
+      </div>
     </div>
   </div>
   <div>

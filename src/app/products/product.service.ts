@@ -5,11 +5,11 @@ import { IProduct } from "./product";
 
 @Injectable()
 export class ProductService {
-    private _productUrl = 'src/app/products/product1.json';
+    private _productUrl = 'http://localhost:8080/abc/rest/';
     productDetails: IProduct;
     constructor(private _http: HttpClient) {
     }
     getProduct(): Observable<any> {
-         return this._http.get(this._productUrl);  
+        return this._http.get(this._productUrl);
     }
 }
