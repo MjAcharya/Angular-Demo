@@ -1,0 +1,17 @@
+{
+    "Title": "Angular 4 App",
+    "Page": "Hello World",
+    "Home": "Home",
+    "ProductList": "Product List",
+    "productTitle": "Product List!!",
+    "FilterBy": "Filter by",
+    "FilteredBy": "Filtered by",
+    "HideImage": "Hide image",
+    "ShowImage": "Show image",
+    "Product": "Product",
+    "Code": "Code",
+    "Available": "Available",
+    "Price": "Price",
+    "5StarRating": "5 Star Rating",
+    "ProductTitleNo":"Product Title"
+}

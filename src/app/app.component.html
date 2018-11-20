@@ -1,4 +1,25 @@
-<div>
-  <h1> {{pageTitle}} </h1>
-  <pm-product></pm-product>
+<div class='col-md-12'>
+  <nav class='navbar navbar-default'>
+    <div class='main'>
+      <div class='container-fluid'>
+        <a class='navbar-brand'>{{ 'Page' | translate }}</a>
+      </div>
+    </div>
+  </nav>
+  <div class='col-md-2'>
+    <div class="sidebar">
+      <div class="container">
+          <a class="openbtn" onclick="openNav()"><i class="fa fa-fw fa-reorder"></i></a>
+          <a [routerLink]="['/welcome']"><i class="fa fa-fw fa-home"></i>{{ 'Home' | translate }}</a>
+          <a [routerLink]="['/products']"><i class="fa fa-fw fa-book"></i>{{ 'ProductList' | translate }}</a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
 </div>
